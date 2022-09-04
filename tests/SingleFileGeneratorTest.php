@@ -1,6 +1,6 @@
 <?php
 
-use MartinLindhe\VueInternationalizationGenerator\Generator;
+use Adaa\VueInternationalizationGenerator\Generator;
 
 class SingleFileGeneratorTest extends \Orchestra\Testbench\TestCase
 {
@@ -47,7 +47,7 @@ class SingleFileGeneratorTest extends \Orchestra\Testbench\TestCase
 
         try {
             (new Generator([]))->generateFromPath($inputDir, $format);
-        } catch(RuntimeException $e) {
+        } catch (RuntimeException $e) {
             $this->assertEquals('Invalid format passed: ' . $format, $e->getMessage());
             return;
         }

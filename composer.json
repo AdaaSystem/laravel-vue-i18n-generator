@@ -34,13 +34,13 @@
   },
   "autoload": {
     "psr-4": {
-      "MartinLindhe\\VueInternationalizationGenerator\\": "src/"
+      "Adaa\\VueInternationalizationGenerator\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "MartinLindhe\\VueInternationalizationGenerator\\GeneratorProvider"
+        "Adaa\\VueInternationalizationGenerator\\GeneratorProvider"
       ]
     }
   }

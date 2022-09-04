@@ -1,6 +1,6 @@
 <?php
 
-use MartinLindhe\VueInternationalizationGenerator\Generator;
+use Adaa\VueInternationalizationGenerator\Generator;
 
 
 class MultiFileGeneratorTest extends \Orchestra\Testbench\TestCase
@@ -45,7 +45,7 @@ class MultiFileGeneratorTest extends \Orchestra\Testbench\TestCase
 
         $expectedFiles = [];
 
-        foreach($expected as $path => $file) {
+        foreach ($expected as $path => $file) {
             $resultFile = $outDir . $file->getFilename();
             $expectedFiles[] = $resultFile . PHP_EOL;
             $this->assertEquals(

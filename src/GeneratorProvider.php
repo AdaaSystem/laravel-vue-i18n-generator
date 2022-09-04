@@ -1,4 +1,5 @@
-<?php namespace MartinLindhe\VueInternationalizationGenerator;
+<?php
+namespace Adaa\VueInternationalizationGenerator;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,11 +28,11 @@ class GeneratorProvider extends ServiceProvider
         );
 
         $this->publishes([
-            __DIR__.'/config/vue-i18n-generator.php' => config_path('vue-i18n-generator.php'),
+            __DIR__ . '/config/vue-i18n-generator.php' => config_path('vue-i18n-generator.php'),
         ]);
 
-         $this->mergeConfigFrom(
-            __DIR__.'/config/vue-i18n-generator.php',
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/vue-i18n-generator.php',
             'vue-i18n-generator'
         );
     }

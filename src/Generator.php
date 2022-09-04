@@ -1,4 +1,6 @@
-<?php namespace MartinLindhe\VueInternationalizationGenerator;
+<?php
+
+namespace Adaa\VueInternationalizationGenerator;
 
 use App;
 use Exception;
@@ -54,13 +56,13 @@ class Generator
         $dirList = $this->getDirList($path);
         $jsBody = '';
         foreach ($dirList as $file) {
-                if(!$withVendor
-                    && in_array($file, array_merge(['vendor'], $this->config['excludes']))
-                ) {
-                    continue;
-                }
+            if (!$withVendor
+                && in_array($file, array_merge(['vendor'], $this->config['excludes']))
+            ) {
+                continue;
+            }
 
-                $files[] = $path . DIRECTORY_SEPARATOR . $file;
+            $files[] = $path . DIRECTORY_SEPARATOR . $file;
         }
 
         foreach ($files as $fileName) {
@@ -92,7 +94,7 @@ class Generator
         $jsonLocales = json_encode($locales, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . PHP_EOL;
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception('Could not generate JSON, error code '.json_last_error());
+            throw new Exception('Could not generate JSON, error code ' . json_last_error());
         }
 
         // formats other than 'es6' and 'umd' will become plain JSON
@@ -155,7 +157,7 @@ class Generator
             $createdFiles .= $fileToCreate . PHP_EOL;
             $jsonLocales = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . PHP_EOL;
             if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new Exception('Could not generate JSON, error code '.json_last_error());
+                throw new Exception('Could not generate JSON, error code ' . json_last_error());
             }
             if ($format === 'es6') {
                 $jsBody = $this->getES6Module($jsonLocales);
@@ -228,7 +230,7 @@ class Generator
                 if ($lastLocale !== false) {
                     $root = realpath(base_path() . $this->config['langPath'] . DIRECTORY_SEPARATOR . $lastLocale);
                     $filePath = $this->removeExtension(str_replace('\\', '_', ltrim(str_replace($root, '', realpath($fileName)), '\\')));
-                    if($filePath[0] === DIRECTORY_SEPARATOR) {
+                    if ($filePath[0] === DIRECTORY_SEPARATOR) {
                         $filePath = substr($filePath, 1);
                     }
                     if ($multiLocales) {
@@ -256,7 +258,7 @@ class Generator
         }
 
         return (isset($this->config['langFiles']) && !empty($this->config['langFiles']) && !in_array($noExt, $this->config['langFiles']))
-                    || (isset($this->config['excludes']) && in_array($noExt, $this->config['excludes']));
+            || (isset($this->config['excludes']) && in_array($noExt, $this->config['excludes']));
     }
 
     /**
