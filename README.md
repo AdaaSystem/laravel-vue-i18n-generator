@@ -25,13 +25,13 @@ For older versions of the framework:
 Register the service provider in ```config/app.php```
 
 ```php
-MartinLindhe\VueInternationalizationGenerator\GeneratorProvider::class,
+Adaa\VueInternationalizationGenerator\GeneratorProvider::class,
 ```
 
 Next, publish the package default config:
 
 ```
-php artisan vendor:publish --provider="MartinLindhe\VueInternationalizationGenerator\GeneratorProvider"
+php artisan vendor:publish --provider="Adaa\VueInternationalizationGenerator\GeneratorProvider"
 ```
 
 ## Using vue-i18n

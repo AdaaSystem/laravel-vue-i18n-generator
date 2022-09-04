@@ -4,7 +4,7 @@ namespace Adaa\VueInternationalizationGenerator\Commands;
 
 use Illuminate\Console\Command;
 
-use MartinLindhe\VueInternationalizationGenerator\Generator;
+use Adaa\VueInternationalizationGenerator\Generator;
 
 class GenerateInclude extends Command
 {
