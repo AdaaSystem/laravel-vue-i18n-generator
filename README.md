@@ -1,6 +1,6 @@
 ## About
 
-[![Build Status](https://travis-ci.org/librenms/laravel-vue-i18n-generator.png?branch=master)](https://travis-ci.org/librenms/laravel-vue-i18n-generator)
+[![Build Status](https://travis-ci.org/adaa/laravel-vue-i18n-generator.png?branch=master)](https://travis-ci.org/librenms/laravel-vue-i18n-generator)
 
 
 Laravel 5 package that allows you to share your [Laravel localizations](https://laravel.com/docs/5.8/localization)
